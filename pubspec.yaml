@@ -1,7 +1,7 @@
 name: multi_select_bottom_sheet
-description: A new Flutter project.
+description: to be able to show a custom multi select bottomsheet easly and flexible package for Flutter.
 version: 0.0.1
-homepage:
+homepage: https://github.com/senghani/multi_select_bottom_sheet
 
 environment:
   sdk: ">=2.17.6 <3.0.0"

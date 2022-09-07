@@ -1,5 +1,5 @@
+import 'package:example/multiselect_bottom_sheet.dart';
 import 'package:flutter/material.dart';
-import 'multiselect_bottom_sheet.dart';
 import 'multiselect_bottom_sheet_model.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'multi select bottom sheet',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  List<MultiSelectBottomSheetModel> shippingStatusesItems = [
+  List<MultiSelectBottomSheetModel> selectCountryItem = [
     MultiSelectBottomSheetModel(id: 0, name: "All", isSelected: true),
     MultiSelectBottomSheetModel(id: 1, name: "India", isSelected: false),
     MultiSelectBottomSheetModel(id: 2, name: "US", isSelected: false),
@@ -42,9 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
     MultiSelectBottomSheetModel(id: 5, name: "Germany", isSelected: false),
   ];
 
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var width= MediaQuery.of(context).size.width;
+    var height= MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -55,12 +58,30 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
 
-               MultiSelectBottomSheet(
-                  items: shippingStatusesItems,
+              //############################################
+              // MultiSelectBottomSheet
+              //############################################
+              MultiSelectBottomSheet(
+                  items:selectCountryItem ,// required for Item list
                   width: width*0.96,
+                  bottomSheetHeight: height*0.7,// required for min/max height of bottomSheet
                   hint: "select country",
-                ),
-
+                  controller: controller,
+                  searchTextFieldWidth:width*0.96,
+                  searchIcon:const Icon(   // required for searchIcon
+                     Icons.search,
+                     color:Colors.black87,
+                     size: 22
+                 ),
+                 selectTextStyle: const TextStyle(
+                     color: Colors.white,
+                     fontSize: 17
+                 ),
+                 unSelectTextStyle:const TextStyle(
+                     color: Colors.black,
+                     fontSize: 17
+                 ),
+               ),
             ],
           ),
         ),
