@@ -5,7 +5,7 @@ Simple and easy to use flutter Widget to add a multiSelectBottomSheet to your Fl
 
 ## Usage example
 
-<img src="Screenshot_1662549731.png" width="250" /><img src="Screenshot_1662550046.png" width="250" />
+<img src="Screenshot_1662549731.png" height="250" /><img src="Screenshot_1662550046.png" height="250" />
 
 ```dart
 List<MultiSelectBottomSheetModel> selectCountryItem = [
